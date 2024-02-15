@@ -29,7 +29,7 @@ Resources:
       Environment:
         Variables:
           CONNECT_SEC_KEY: <YOUR-CONNECT-WIDGET-SECURITY-KEY>
-          CONNECT_WIDGET_ID: 36a8ab85-377e-4b93-95df-05602ab7e4ad
+          CONNECT_WIDGET_ID: <YOUR-CONNECT_WIDGET-ID>
 
       Events:
         GetToken:

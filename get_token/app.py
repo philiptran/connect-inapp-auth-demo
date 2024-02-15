@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 JWT_ALGORITHM = 'HS256'
 JWT_EXP_DELTA_SECONDS = 500
-CONNECT_SECRET = os.environ['CONNECT_SECRET']
+CONNECT_SECRET = os.environ['CONNECT_SEC_KEY']
 CONNECT_WIDGET_ID = os.environ['CONNECT_WIDGET_ID']
 
 def lambda_handler(event, context):    
