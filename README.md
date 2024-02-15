@@ -16,10 +16,21 @@ The Serverless Application Model Command Line Interface (SAM CLI) is an extensio
 To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* [Python 3 installed](https://www.python.org/downloads/)
+* [Python 3.9 installed](https://www.python.org/downloads/)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-To build and deploy your application for the first time, run the following in your shell:
+To build and deploy your application for **the first time**, 
+
+First, edit the `template.yaml` file and provide values for the 2 environment variables that are specific to your Amazon Connect's Communication Widget.
+
+```
+ Environment:
+        Variables:
+          CONNECT_SEC_KEY: <YOUR-CONNECT-WIDGET-SECURITY-KEY>
+          CONNECT_WIDGET_ID: <YOUR-CONNECT_WIDGET-ID>
+```
+
+Save the `template.yaml` file and run the following in your shell:
 
 ```bash
 pip install -r get_token/requirements.txt
@@ -27,7 +38,7 @@ sam build --use-container
 sam deploy --guided
 ```
 
-The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
+The build command will build the source of your application. The deploy command will package and deploy your application to AWS, with a series of prompts:
 
 * **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
 * **AWS Region**: The AWS region you want to deploy your app to.
